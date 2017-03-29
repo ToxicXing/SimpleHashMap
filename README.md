@@ -3,9 +3,9 @@
 ## Introduction
 This is an implementation of Simple HashMap using Java array and Java Linked data sturcture.
 ## Tricky Part
-Java use an array, let's say the name of the array is "table", to store key value pairs.
+Java uses an array, let's say the name of the array is "table", to store key value pairs.
 The tricky part is how Java decides at which position(i.e. index) Java puts them.
-The answer to this quesiton is a simple line of code.
+The answer to this quesiton is a simple code snippet.
 ```java
 int hash = key == null ? 0 : key.hashCode();
 int len = table.length;
@@ -23,5 +23,5 @@ But, still, why not use
 hash % len
 ```
 This is probably because the designer of original hash map wants to make sure that the first element of table should always be null and null only.
-In other words, there will be no nodes linked afte null if we do have null as key.
+In other words, there will be no node linked afte null if we do have null as key.
 
