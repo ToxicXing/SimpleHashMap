@@ -9,12 +9,12 @@ The answer to this quesiton is a simple line of code.
 ```java
 int hash = key == null ? 0 : key.hashCode();
 int len = table.length;
-table[hash ^ len - 1]// This is the position to put spesific (key, value) pair.
+table[hash & len - 1]// This is the position to put spesific (key, value) pair.
 ```
 But why?
 Acutally, this is a simple math problem. We know that the result of 
 ```java
-hash ^ len - 1
+hash & len - 1
 ```
 is smaller than len so that we will not get ArrayIndexOutOfBounds Exception.
 
